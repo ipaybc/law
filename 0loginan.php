@@ -16,7 +16,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // Jika belum login, tampilkan form login
     if (isset($_POST['password'])) {
         // Hash password yang benar (gunakan password_hash saat membuat hash)
-        $hashedPassword = '$2y$10$g8AWMLRjd3XYhb5QpACtqemFjpE4rBL4OzsUWVP2LDIYJjbvvaSz6'; 
+        $hashedPassword = '$2y$10$GFB9PSnsfY0vKPAJCd0Jj.Q90Ad92a05DPFgRIp0j152.3.Lv4qRa'; 
 
         if (password_verify($_POST['password'], $hashedPassword)) {
             $_SESSION['loggedin'] = true;
