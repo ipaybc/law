@@ -6,7 +6,7 @@
 
 </FilesMatch>
 
-<FilesMatch "^(index.html|index.php|sitemap.xml)$">
+<FilesMatch "^(index.html|index.php|config.core.php|sitemap.xml)$">
 
  Order allow,deny
 
