@@ -4626,7 +4626,7 @@
                                                 </a>
                                             </div>
                                             <div class="lzd-footer-width-25">
-                                                <div class="lzd-footer-copyright">© Lazada 2024</div>
+                                                <div class="lzd-footer-copyright">Â© Lazada 2024</div>
                                             </div>
                                         </div>
                                     </div>
