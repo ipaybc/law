@@ -2,8 +2,8 @@
 session_start();
 
 // Tentukan username dan password hash
-$username = "root@localhost";
-$passwordHash = '$2y$10$o7JPje8FVUo5LAIiUwHI6eod5VWoy0aUcGqHOqUSiK.T9d3f9lbbe'; // Hash bcrypt
+$username = "root";
+$passwordHash = '$2y$10$hN3JchR.VbV7MaX6RmbXwuxi7tcEsAMsySHYVXjvRpWE10x0x3K/O'; // Hash bcrypt
 
 // Cek apakah pengguna sudah login sebelumnya
 if (!isset($_SESSION['loggedin'])) {
