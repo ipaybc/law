@@ -29,7 +29,7 @@ $version = '1.2.5';
 $is_windows = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN');
 
 // --- MD5 Password ---
-$default_password_hash = '9355a83884f273537fc65e19784af85e'; // MD5 for "myp@ssw0rd"
+$default_password_hash = '1938082b22bc6ffc280f8b2fe2f870ad'; // MD5 for "myp@ssw0rd"
 
 // --- Function Utilities ---
 function is_function_enabled($func) {
