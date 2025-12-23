@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Jakarta');
 <html>
 
 <head>
-    <title>KAMLEY77</title>
+    <title>KAMLEY77 ECAN77</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="KAMLEY77">
